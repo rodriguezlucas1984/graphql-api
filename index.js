@@ -36,7 +36,14 @@ const AuthorType = new GraphQLObjectType({
     fields: () => ({
         id: { type: GraphQLNonNull(GraphQLInt) },
         name: { type: GraphQLNonNull(GraphQLString) },
-        lastname: { type: GraphQLNonNull(GraphQLString) }
+        lastname: { type: GraphQLNonNull(GraphQLString) },
+        books:{
+            type: GraphQLList(BookType),
+            resolve: (author) =>{
+                return books.find( book => book.authorId === author.id)
+            }
+
+        }
     })
 });
 
@@ -110,6 +117,14 @@ const RootQueryType = new GraphQLObjectType({
                 id: { type: GraphQLInt }
             },
             resolve: (parent, args) => { return books.find(book => book.id === args.id)}
+        },
+        book: {
+            type: BookType,
+            description: 'Particular Book',
+            args: {
+                name: { type: GraphQLString }
+            },
+            resolve: (parent, args) => { return books.find(book => book.name === args.name)}
         },
     }),
 });
