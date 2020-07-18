@@ -1,0 +1,29 @@
+[
+    {   "id" : 1,
+        "name" : "El Libro de Lucas",
+        "authorId" : 1
+
+    },
+    {   "id" :  2,
+        "name" : "El Libro de Jose",
+        "authorId" : 2
+
+    },
+    {   "id" : 3,
+        "name" : "El Libro de Marcos",
+        "authorId" : 3
+
+    },
+    {   "id" : 4,
+        "name" : "El Libro de Daniel I",
+        "authorId" : 4
+
+    },
+    {   "id" : 5,
+        "name" : "El Libro de Daniel II",
+        "authorId" : 4
+
+    }
+
+
+]
